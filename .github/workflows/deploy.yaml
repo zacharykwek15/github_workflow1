@@ -17,6 +17,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Print env for debugging
+      run: |
+        echo "S3_BUCKET_NAME: $S3_BUCKET_NAME"
+        echo "AWS_REGION: $AWS_REGION"
+
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
@@ -35,9 +41,17 @@ jobs:
     - name: Upload files to S3
       run: |
         aws s3 sync . s3://$S3_BUCKET_NAME --delete --acl public-read
+   
+    - name: Upload files to S3 (with debug)
+      run: |
+        echo "Current directory:"
+        pwd
+        echo "Listing files:"
+        ls -la
 
-
-
+        echo "Bucket: $S3_BUCKET_NAME"
+        echo "Syncing files to S3..."
+        aws s3 sync . s3://$S3_BUCKET_NAME --delete --acl public-read --debug
 
 
 
