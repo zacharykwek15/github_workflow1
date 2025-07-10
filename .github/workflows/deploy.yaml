@@ -6,6 +6,7 @@ on:
 
 env: 
   AWS_REGION: ap-southeast-1
+  S3_BUCKET_NAME: zhbucket123     #avoid hard coding
 
 jobs:
   deploy:
