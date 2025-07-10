@@ -34,7 +34,7 @@ jobs:
 
     - name: Upload files to S3
       run: |
-        aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read
+        aws s3 sync . s3://$S3_BUCKET_NAME --delete --acl public-read
 
 
 
