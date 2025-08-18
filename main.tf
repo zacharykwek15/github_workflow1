@@ -3,8 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "zh-terraform-s3-bucket-demo"
-
+  bucket = "zhbucket123"
 
   tags = {
     Name        = "Demo S3 Bucket"
