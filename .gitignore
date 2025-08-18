@@ -36,6 +36,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+# Terraform
 *.tfstate
 *.tfstate.backup
 .terraform/
