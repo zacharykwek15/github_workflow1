@@ -1,6 +1,11 @@
+#Assignment 3.1 (removed on: [push]) so it wont run in assignment 3.2
+
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+
+on: []
+
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
